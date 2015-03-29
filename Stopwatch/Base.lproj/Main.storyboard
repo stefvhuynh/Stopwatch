@@ -45,6 +45,11 @@
                                         <integer key="value" value="36"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MQU-QX-ide"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="startBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="erN-XG-Rru"/>
                                 </connections>
@@ -74,7 +79,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startButton" destination="Esd-Mt-phy" id="i78-S5-scy"/>
+                        <outlet property="startBtn" destination="Esd-Mt-phy" id="6fj-Ak-Mgb"/>
                         <outlet property="timeLabel" destination="OCn-9a-HtO" id="aRJ-ug-Ltg"/>
                     </connections>
                 </viewController>
