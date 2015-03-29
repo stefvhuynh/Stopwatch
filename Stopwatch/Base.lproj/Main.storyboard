@@ -28,15 +28,22 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esd-Mt-phy">
                                 <rect key="frame" x="264" y="379" width="72" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="CHO-2W-mbl"/>
-                                    <constraint firstAttribute="height" constant="38" id="a2u-eC-6Pa"/>
+                                    <constraint firstAttribute="width" constant="72" id="lX5-Wd-DSj"/>
+                                    <constraint firstAttribute="height" constant="72" id="mk5-gt-pTc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Start">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="36"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="erN-XG-Rru"/>
                                 </connections>
@@ -44,7 +51,6 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35k-fK-YSW">
                                 <rect key="frame" x="264" y="439" width="72" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="Laj-LQ-bCm"/>
                                     <constraint firstAttribute="height" constant="40" id="T5r-hj-Be5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -59,8 +65,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OCn-9a-HtO" secondAttribute="centerX" id="Qoo-yi-htb"/>
+                            <constraint firstItem="Esd-Mt-phy" firstAttribute="top" secondItem="OCn-9a-HtO" secondAttribute="bottom" constant="103" id="gHq-fn-BLQ"/>
                             <constraint firstItem="35k-fK-YSW" firstAttribute="top" secondItem="Esd-Mt-phy" secondAttribute="bottom" constant="22" id="gfo-8O-UfG"/>
-                            <constraint firstItem="Esd-Mt-phy" firstAttribute="top" secondItem="OCn-9a-HtO" secondAttribute="bottom" constant="103" id="ghK-Np-tXM"/>
                             <constraint firstAttribute="centerX" secondItem="35k-fK-YSW" secondAttribute="centerX" id="pfy-vM-dhl"/>
                             <constraint firstItem="OCn-9a-HtO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="198" id="ts5-WN-qeb"/>
                             <constraint firstAttribute="centerX" secondItem="Esd-Mt-phy" secondAttribute="centerX" id="ue3-rR-exI"/>

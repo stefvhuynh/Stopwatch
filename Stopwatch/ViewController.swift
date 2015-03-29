@@ -16,17 +16,11 @@ class ViewController: UIViewController {
     @IBAction func startBtnTapped(sender: UIButton) {
         if startButton.titleLabel!.text == "Start" {
             startButton.setTitle("Stop", forState: UIControlState.Normal)
-            startButton.setTitleColor(
-                UIColor.redColor(),
-                forState: UIControlState.Normal
-            )
+            startButton.backgroundColor = UIColor.redColor()
             startStopWatch()
         } else {
             startButton.setTitle("Start", forState: UIControlState.Normal)
-            startButton.setTitleColor(
-                UIColor.greenColor(),
-                forState: UIControlState.Normal
-            )
+            startButton.backgroundColor = UIColor.greenColor()
             stopStopWatch()
         }
     }
