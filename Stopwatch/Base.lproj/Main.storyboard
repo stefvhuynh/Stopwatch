@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-9a-HtO">
-                                <rect key="frame" x="241" y="218" width="119" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-9a-HtO">
+                                <rect key="frame" x="241" y="218" width="119" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="119" id="Smo-cN-YCt"/>
                                     <constraint firstAttribute="height" constant="45" id="pBi-dX-FCJ"/>
@@ -26,25 +26,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esd-Mt-phy">
-                                <rect key="frame" x="264" y="439" width="72" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esd-Mt-phy">
+                                <rect key="frame" x="264" y="379" width="72" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="CHO-2W-mbl"/>
                                     <constraint firstAttribute="height" constant="38" id="a2u-eC-6Pa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PEo-gA-NrV"/>
+                                    <action selector="startBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="erN-XG-Rru"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35k-fK-YSW">
+                                <rect key="frame" x="264" y="439" width="72" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="Laj-LQ-bCm"/>
+                                    <constraint firstAttribute="height" constant="40" id="T5r-hj-Be5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetBtnTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4PL-MP-pMe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OCn-9a-HtO" secondAttribute="centerX" id="Qoo-yi-htb"/>
-                            <constraint firstItem="Esd-Mt-phy" firstAttribute="top" secondItem="OCn-9a-HtO" secondAttribute="bottom" constant="176" id="hKZ-ri-Up3"/>
+                            <constraint firstItem="35k-fK-YSW" firstAttribute="top" secondItem="Esd-Mt-phy" secondAttribute="bottom" constant="22" id="gfo-8O-UfG"/>
+                            <constraint firstItem="Esd-Mt-phy" firstAttribute="top" secondItem="OCn-9a-HtO" secondAttribute="bottom" constant="103" id="ghK-Np-tXM"/>
+                            <constraint firstAttribute="centerX" secondItem="35k-fK-YSW" secondAttribute="centerX" id="pfy-vM-dhl"/>
                             <constraint firstItem="OCn-9a-HtO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="198" id="ts5-WN-qeb"/>
                             <constraint firstAttribute="centerX" secondItem="Esd-Mt-phy" secondAttribute="centerX" id="ue3-rR-exI"/>
                         </constraints>
