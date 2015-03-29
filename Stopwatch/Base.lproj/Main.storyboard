@@ -26,12 +26,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esd-Mt-phy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esd-Mt-phy">
                                 <rect key="frame" x="264" y="379" width="72" height="38"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="lX5-Wd-DSj"/>
-                                    <constraint firstAttribute="height" constant="72" id="mk5-gt-pTc"/>
+                                    <constraint firstAttribute="height" constant="38" id="mk5-gt-pTc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,9 +64,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="35k-fK-YSW" secondAttribute="bottom" constant="121" id="OhD-bK-n2N"/>
+                            <constraint firstItem="35k-fK-YSW" firstAttribute="top" secondItem="Esd-Mt-phy" secondAttribute="bottom" constant="22" id="PST-Ec-oOl"/>
                             <constraint firstAttribute="centerX" secondItem="OCn-9a-HtO" secondAttribute="centerX" id="Qoo-yi-htb"/>
-                            <constraint firstItem="Esd-Mt-phy" firstAttribute="top" secondItem="OCn-9a-HtO" secondAttribute="bottom" constant="103" id="gHq-fn-BLQ"/>
-                            <constraint firstItem="35k-fK-YSW" firstAttribute="top" secondItem="Esd-Mt-phy" secondAttribute="bottom" constant="22" id="gfo-8O-UfG"/>
                             <constraint firstAttribute="centerX" secondItem="35k-fK-YSW" secondAttribute="centerX" id="pfy-vM-dhl"/>
                             <constraint firstItem="OCn-9a-HtO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="198" id="ts5-WN-qeb"/>
                             <constraint firstAttribute="centerX" secondItem="Esd-Mt-phy" secondAttribute="centerX" id="ue3-rR-exI"/>
