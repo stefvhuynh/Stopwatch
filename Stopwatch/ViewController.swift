@@ -9,27 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var startButton: UIButton!
-    var timer = NSTimer()
-   
-    @IBAction func startBtnTapped(sender: UIButton) {
-        if startButton.titleLabel!.text == "Start" {
-            startButton.setTitle("Stop", forState: UIControlState.Normal)
-            startButton.backgroundColor = UIColor.redColor()
-            startStopWatch()
-        } else {
-            startButton.setTitle("Start", forState: UIControlState.Normal)
-            startButton.backgroundColor = UIColor.greenColor()
-            stopStopWatch()
-        }
-    }
-    
-    @IBAction func resetBtnTapped(sender: AnyObject) {
-        stopStopWatch()
-        timeLabel.text = "00:00"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,8 +18,28 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+ 
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var startBtn: UIButton!
+   
+    @IBAction func startBtnTapped(sender: UIButton) {
+        if startBtn.titleLabel!.text == "Start" {
+            startBtn.setTitle("Stop", forState: UIControlState.Normal)
+            startBtn.backgroundColor = UIColor.redColor()
+            startStopWatch()
+        } else {
+            startBtn.setTitle("Start", forState: UIControlState.Normal)
+            startBtn.backgroundColor = UIColor.greenColor()
+            stopStopWatch()
+        }
+    }
     
-    internal func updateTimeLabel() {
+    @IBAction func resetBtnTapped(sender: AnyObject) {
+        stopStopWatch()
+        timeLabel.text = "00:00"
+    }
+    
+    func updateTimeLabel() {
         let timeArr = timeLabel.text!.componentsSeparatedByString(":")
         let minutes = timeArr[0].toInt()!
         let seconds = timeArr[1].toInt()!
@@ -60,6 +59,8 @@ class ViewController: UIViewController {
         
         timeLabel.text = "\(minutesStr):\(secondsStr)"
     }
+    
+    private var timer = NSTimer()
     
     private func startStopWatch() {
         timer = NSTimer.scheduledTimerWithTimeInterval(
