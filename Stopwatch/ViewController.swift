@@ -23,22 +23,13 @@ class ViewController: UIViewController {
     @IBOutlet var startBtn: UIButton!
    
     @IBAction func startBtnTapped(sender: UIButton) {
-        if startBtn.titleLabel!.text == "Start" {
-            startBtn.setTitle("Stop", forState: UIControlState.Normal)
-            startBtn.backgroundColor = UIColor.redColor()
-            startStopWatch()
-        } else {
-            startBtn.setTitle("Start", forState: UIControlState.Normal)
-            startBtn.backgroundColor = UIColor.greenColor()
-            stopStopWatch()
-        }
+        (startBtn.titleLabel!.text == "Start") ?
+            startStopWatch() : stopStopWatch()
     }
     
     @IBAction func resetBtnTapped(sender: AnyObject) {
-        stopStopWatch()
         timeLabel.text = "00:00"
-        startBtn.setTitle("Start", forState: UIControlState.Normal)
-        startBtn.backgroundColor = UIColor.greenColor()
+        stopStopWatch()
     }
     
     func updateTimeLabel() {
@@ -65,6 +56,9 @@ class ViewController: UIViewController {
     private var timer = NSTimer()
     
     private func startStopWatch() {
+        startBtn.setTitle("Stop", forState: UIControlState.Normal)
+        startBtn.backgroundColor = UIColor.redColor()
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(
             1,
             target: self,
@@ -75,6 +69,9 @@ class ViewController: UIViewController {
     }
     
     private func stopStopWatch() {
+        startBtn.setTitle("Start", forState: UIControlState.Normal)
+        startBtn.backgroundColor = UIColor.greenColor()
+        
         timer.invalidate()
     }
 }
