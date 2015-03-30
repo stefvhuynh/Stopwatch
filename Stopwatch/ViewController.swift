@@ -37,6 +37,8 @@ class ViewController: UIViewController {
     @IBAction func resetBtnTapped(sender: AnyObject) {
         stopStopWatch()
         timeLabel.text = "00:00"
+        startBtn.setTitle("Start", forState: UIControlState.Normal)
+        startBtn.backgroundColor = UIColor.greenColor()
     }
     
     func updateTimeLabel() {
