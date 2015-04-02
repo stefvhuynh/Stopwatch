@@ -11,12 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
  
     @IBOutlet var timeLabel: UILabel!
@@ -27,11 +25,11 @@ class ViewController: UIViewController {
             startStopWatch() : stopStopWatch()
     }
     
-    @IBAction func resetBtnTapped(sender: AnyObject) {
+    @IBAction func resetBtnTapped(sender: UIButton) {
         timeLabel.text = "00:00"
         stopStopWatch()
     }
-    
+   
     func updateTimeLabel() {
         let timeArr = timeLabel.text!.componentsSeparatedByString(":")
         let minutes = timeArr[0].toInt()!
@@ -59,8 +57,7 @@ class ViewController: UIViewController {
         startBtn.setTitle("Stop", forState: UIControlState.Normal)
         startBtn.backgroundColor = UIColor.redColor()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(
-            1,
+        timer = NSTimer.scheduledTimerWithTimeInterval(1,
             target: self,
             selector: Selector("updateTimeLabel"),
             userInfo: nil,
