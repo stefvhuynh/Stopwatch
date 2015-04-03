@@ -10,66 +10,99 @@ import UIKit
 import XCTest
 
 class StopwatchTests: XCTestCase {
-    let viewController = ViewController()
+    var viewController: ViewController!
     
     override func setUp() {
         super.setUp()
         
-        viewController.startBtn = UIButton()
-        viewController.startBtn
-            .setTitle("Start", forState: UIControlState.Normal)
+        let storyboard = UIStoryboard(
+            name: "Main",
+            bundle: NSBundle(forClass: self.dynamicType)
+        )
         
-        viewController.timeLabel = UILabel()
-        viewController.timeLabel.text = "00:00"
+        viewController =
+            storyboard.instantiateViewControllerWithIdentifier(
+                "ViewControllerId"
+            ) as ViewController
+        
+        let _ = viewController.view
     }
     
     override func tearDown() {
         super.tearDown()
-        
-        viewController.startBtn = nil
-        viewController.timeLabel = nil
     }
     
-    func testViewDidLoad() {
-        XCTAssertNotNil(viewController.view, "View did not load")
+    func testOutletsAreConnected() {
+        XCTAssertNotNil(viewController.timeLabel, "timeLabel is nil")
+        XCTAssertNotNil(viewController.startBtn, "startBtn is nil")
+        XCTAssertNotNil(viewController.resetBtn, "resetBtn is nil")
     }
     
-    func testStartBtnTappedChangesStartBtnTitleAndBackgroundColor() {
-        var startBtn = viewController.startBtn
-        
-        viewController.startBtnTapped(startBtn)
-        
+    func testOutletsHaveInitialValues() {
         XCTAssertEqual(
-            startBtn.titleLabel!.text!,
-            "Stop",
-            "startBtn title did not change to 'Stop'"
+            viewController.timeLabel!.text!,
+            "00:00",
+            "timeLabel is not '00:00'"
         )
         XCTAssertEqual(
-            startBtn.backgroundColor!,
-            UIColor.redColor(),
-            "startBtn background color did not change to red"
-        )
-        
-        viewController.startBtnTapped(startBtn)
-        
-        XCTAssertEqual(
-            startBtn.titleLabel!.text!,
+            viewController.startBtn!.titleLabel!.text!,
             "Start",
-            "startBtn title did not change to 'Start'"
+            "startBtn title is not 'Start'"
         )
         XCTAssertEqual(
-            startBtn.backgroundColor!,
-            UIColor.greenColor(),
-            "startBtn background color did not change to green"
+            viewController.resetBtn!.titleLabel!.text!,
+            "Reset",
+            "resetBtn title is not 'Reset'"
         )
     }
     
-    func testStartBtnTappedChangesTimeLabel() {
-        var startBtn = viewController.startBtn
-        var timeLabel = viewController.timeLabel
-    }
-    
-    func testResetBtnTapped() {
+    func testActionsAreConnected() {
+        let startBtnActions = viewController.startBtn.actionsForTarget(
+            viewController,
+            forControlEvent: UIControlEvents.TouchUpInside
+        )!
         
+        let resetBtnActions = viewController.resetBtn.actionsForTarget(
+            viewController,
+            forControlEvent: UIControlEvents.TouchUpInside
+        )!
     }
+    // func testStartBtnTappedChangesStartBtnTitleAndBackgroundColor() {
+    //     var startBtn = viewController.startBtn!
+    //     
+    //     viewController.startBtnTapped(startBtn)
+    //     
+    //     XCTAssertEqual(
+    //         startBtn.titleLabel!.text!,
+    //         "Stop",
+    //         "startBtn title did not change to 'Stop'"
+    //     )
+    //     XCTAssertEqual(
+    //         startBtn.backgroundColor!,
+    //         UIColor.redColor(),
+    //         "startBtn background color did not change to red"
+    //     )
+    //     
+    //     viewController.startBtnTapped(startBtn)
+    //     
+    //     XCTAssertEqual(
+    //         startBtn.titleLabel!.text!,
+    //         "Start",
+    //         "startBtn title did not change to 'Start'"
+    //     )
+    //     XCTAssertEqual(
+    //         startBtn.backgroundColor!,
+    //         UIColor.greenColor(),
+    //         "startBtn background color did not change to green"
+    //     )
+    // }
+    // 
+    // func testStartBtnTappedChangesTimeLabel() {
+    //     var startBtn = viewController.startBtn
+    //     var timeLabel = viewController.timeLabel
+    // }
+    // 
+    // func testResetBtnTapped() {
+    //     
+    // }
 }

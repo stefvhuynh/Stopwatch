@@ -19,7 +19,8 @@ class ViewController: UIViewController {
  
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var startBtn: UIButton!
-   
+    @IBOutlet var resetBtn: UIButton!
+    
     @IBAction func startBtnTapped(sender: UIButton) {
         (startBtn.titleLabel!.text == "Start") ?
             startStopWatch() : stopStopWatch()
