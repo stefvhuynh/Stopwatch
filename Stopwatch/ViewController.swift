@@ -22,8 +22,11 @@ class ViewController: UIViewController {
     @IBOutlet var resetBtn: UIButton!
     
     @IBAction func startBtnTapped(sender: UIButton) {
-        (startBtn.titleLabel!.text == "Start") ?
-            startStopWatch() : stopStopWatch()
+        if startBtn.titleForState(UIControlState.Normal) == "Start" {
+            startStopWatch()
+        } else {
+            stopStopWatch()
+        }
     }
     
     @IBAction func resetBtnTapped(sender: UIButton) {
