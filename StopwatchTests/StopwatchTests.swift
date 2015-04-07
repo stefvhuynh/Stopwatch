@@ -40,7 +40,7 @@ class StopwatchTests: XCTestCase {
     
     func testOutletsHaveInitialValues() {
         XCTAssertEqual(
-            viewController.timeLabel!.text!,
+            viewController.timeLabel.text!,
             "00:00",
             "timeLabel is not '00:00'"
         )
